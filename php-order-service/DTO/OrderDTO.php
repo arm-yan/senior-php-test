@@ -12,12 +12,12 @@ class OrderDTO
     private float $totalPrice;
     private string $createdAt;
 
-    public function __construct(string $productId, int $quantity, float $totalPrice)
+    public function __construct(string $productId, int $quantity, float $price)
     {
         $this->orderId = Uuid::uuid4()->toString();
         $this->productId = $productId;
         $this->quantity = $quantity;
-        $this->totalPrice = $totalPrice;
+        $this->totalPrice = $quantity * $price;
         $this->createdAt = date('c');
     }
 

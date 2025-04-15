@@ -2,6 +2,7 @@
 
 namespace App\Service;
 
+use App\DTO\CreateOrderDTO;
 use App\DTO\OrderDTO;
 use App\Storage\OrderStorage;
 use App\HttpClient\ProductClient;
@@ -17,9 +18,9 @@ class OrderService
         $this->productClient = new ProductClient();
     }
 
-    public function createOrder(string $productId, int $quantity): array
+    public function createOrder(CreateOrderDTO $createOrderDTO): array
     {
-        $product = $this->productClient->getProductById($productId);
+        $product = $this->productClient->getProductById($createOrderDTO->getProductId());
 
         if (!$product) {
             http_response_code(404);
@@ -27,8 +28,7 @@ class OrderService
             exit;
         }
 
-        $totalPrice = $product['price'] * $quantity;
-        $order = new OrderDTO($productId, $quantity, $totalPrice);
+        $order = new OrderDTO($createOrderDTO->getProductId(), $createOrderDTO->getQuantity(), $product['price']);
 
         $this->storage->addOrder($order);
 
