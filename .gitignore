@@ -1,0 +1,19 @@
+# Node.js - product-service
+/node-product-service/node_modules/
+/node-product-service/.env
+/node-product-service/.DS_Store
+
+# PHP - order-service
+/php-order-service/vendor/
+/php-order-service/.env
+/php-order-service/.DS_Store
+
+# General
+*.log
+*.cache
+.env
+.DS_Store
+.idea/
+.vscode/
+*.zip
+*.tar.gz
