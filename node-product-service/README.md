@@ -15,9 +15,13 @@ node-product-service/
 ├── app.js
 ├── package.json
 ├── routes/
+│   └── productRoutes.js
 ├── controllers/
+│   └── productController.js
 ├── services/
+│   └── productService.js
 └── data/
+│   └── productData.js
 ```
 
 ---
@@ -26,7 +30,7 @@ node-product-service/
 
 ```bash
 # Clone the repo
-git clone <your-repo-url>
+git clone https://github.com/arm-yan/senior-php-test.git .
 cd node-product-service
 
 # Install dependencies

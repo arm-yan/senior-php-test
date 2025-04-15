@@ -32,7 +32,8 @@ php-order-service/
 
 ```bash
 # Clone the repo
-git clone <your-repo-url> .
+git clone https://github.com/arm-yan/senior-php-test.git .
+cd php-order-service
 
 # Install dependencies
 composer install
